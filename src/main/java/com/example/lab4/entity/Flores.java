@@ -20,16 +20,18 @@ public class Flores {
     private Double precio;
     @Column(name = "descripcion")
     private String descripcion;
+    @Column(name = "foto")
+    private String foto;
 
     @ManyToOne
-    @JoinColumn(name = "idColor")
+    @JoinColumn(name = "color_idcolor")
     private Color color;
+
     @ManyToOne
-    @JoinColumn(name = "idTipo")
+    @JoinColumn(name = "tipo_idtipo")
     private Tipo tipo;
+
     @ManyToOne
-    @JoinColumn(name = "idOcasion")
+    @JoinColumn(name = "ocasion_idocasion")
     private Ocasion ocasion;
-
-
 }

@@ -13,18 +13,16 @@ import java.util.List;
 
 public class FloresController {
 
-    final FloresRepository floresRepositoy;
+    final FloresRepository floresRepository;
 
     public FloresController(FloresRepository floresRepository) {
-        this.floresRepositoy = floresRepository;
+        this.floresRepository = floresRepository;
     }
 
     @GetMapping(value = {"/list", ""})
     public String listarFlores(Model model) {
 
-        List<Flores> lista = floresRepositoy.findAll();
-        model.addAttribute("floresList", lista);
-
+        model.addAttribute("lista", floresRepository.findAll());
         return "/list";
     }
 
